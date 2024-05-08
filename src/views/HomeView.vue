@@ -1,3 +1,10 @@
+<script setup lang="ts">
+import { RouterView } from 'vue-router'
+import Header from '@/components/HeaderComponent.vue'
+</script>
 <template>
-  <h1 class="text-3xl font-bold text-blue-600 underline">Hello world!</h1>
+  <Header />
+  <main class="p-5 md:px-10">
+    <RouterView />
+  </main>
 </template>

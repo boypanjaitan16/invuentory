@@ -4,7 +4,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --host",
     "build": "run-p type-check \"build-only {@}\" --",
     "preview": "vite preview",
     "test:unit": "vitest",
@@ -17,12 +17,15 @@
   },
   "dependencies": {
     "@vee-validate/yup": "^4.12.7",
+    "firebase": "^10.11.1",
     "pinia": "^2.1.7",
+    "pinia-plugin-persistedstate": "^3.2.1",
     "vee-validate": "^4.12.7",
     "vue": "^3.4.21",
     "vue-router": "^4.3.0"
   },
   "devDependencies": {
+    "@iconify-json/eos-icons": "^1.1.10",
     "@iconify-json/mdi": "^1.1.66",
     "@iconify/tailwind": "^1.0.1",
     "@rushstack/eslint-patch": "^1.8.0",
