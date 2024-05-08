@@ -8,6 +8,8 @@ import ProfileView from '@/views/dashboard/profile/ProfileView.vue'
 import DetailProfileView from '@/views/dashboard/profile/DetailProfileView.vue'
 import UpdateProfileView from '@/views/dashboard/profile/UpdateProfileView.vue'
 import ChangePasswordView from '@/views/dashboard/profile/ChangePasswordView.vue'
+import DashboardAdminView from '@/views/admin/DashboardView.vue'
+import ListUsersView from '@/views/admin/users/ListUsersView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -37,6 +39,23 @@ const router = createRouter({
             {
               path: 'change-password',
               component: ChangePasswordView
+            }
+          ]
+        }
+      ]
+    },
+    {
+      path: '/admin',
+      name: 'admin',
+      component: HomeView,
+      children: [
+        {
+          path: '',
+          component: DashboardAdminView,
+          children: [
+            {
+              path: 'users',
+              component: ListUsersView
             }
           ]
         }
