@@ -24,7 +24,9 @@ const handleLogout = () => {
     <button type="button" class="text-white">
       <span class="icon-[mdi--user-circle-outline] h-6 w-6"></span>
     </button>
-    <div class="user-info-dropdown absolute right-0 bg-white border rounded shadow min-w-[260px]">
+    <div
+      class="user-info-dropdown z-40 absolute right-0 bg-white border rounded shadow min-w-[260px]"
+    >
       <div class="p-4">
         <span class="text-xs uppercase">Account</span>
         <div class="flex items-center mt-2 space-x-3">
@@ -38,8 +40,14 @@ const handleLogout = () => {
       <ul class="user-info-menu">
         <li>
           <router-link to="/profile">
-            <span class="icon-[mdi--cog-outline] text-lg"></span>
+            <span class="icon-[mdi--user-online-outline] text-lg"></span>
             <span>My Profile</span>
+          </router-link>
+        </li>
+        <li>
+          <router-link to="/admin">
+            <span class="icon-[mdi--cog-outline] text-lg"></span>
+            <span>Administrator</span>
           </router-link>
         </li>
       </ul>

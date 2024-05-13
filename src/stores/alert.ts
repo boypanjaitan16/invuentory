@@ -1,20 +1,34 @@
-import { ref } from 'vue'
+import { reactive } from 'vue'
 import { defineStore } from 'pinia'
 
 export const useAlertStore = defineStore(
   'alert',
   () => {
-    const message = ref('')
+    const alert = reactive<{
+      type: 'error' | 'warning' | 'success' | 'info'
+      message?: string
+      timer?: number
+    }>({
+      type: 'info',
+      timer: 5000
+    })
 
-    const setMessage = (msg: string) => {
-      message.value = msg
+    const setAlert = (param: typeof alert) => {
+      alert.message = param.message
+      alert.type = param.type
+
+      if (param.timer) {
+        alert.timer = param.timer
+      }
     }
 
-    const clearMessage = () => {
-      message.value = ''
+    const clearAlert = () => {
+      alert.type = 'info'
+      alert.message = undefined
+      alert.timer = 5000
     }
 
-    return { message, setMessage, clearMessage }
+    return { alert, setAlert, clearAlert }
   },
   { persist: false }
 )

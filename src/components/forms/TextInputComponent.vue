@@ -2,7 +2,7 @@
 import { defineProps, defineModel, ref } from 'vue'
 
 const props = defineProps<{
-  type: 'email' | 'password' | 'text'
+  type: 'email' | 'password' | 'text' | 'date'
   name: string
   required?: boolean
   placeholder?: string
@@ -25,8 +25,9 @@ const togglePassword = () => {
       :for="name"
       class="text-sm font-light"
       :class="[errors ? 'text-red-600' : 'text-gray-500']"
-      >{{ label }}</label
-    >
+      >{{ label }}
+    </label>
+
     <div class="relative">
       <input
         v-model="model"
