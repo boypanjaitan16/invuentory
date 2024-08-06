@@ -59,7 +59,7 @@ const handleSavePassword = handleSubmit((values) => {
 </script>
 <template>
   <div class="w-full lg:w-7/12">
-    <form class="space-y-3" @submit.prevent="handleSavePassword">
+    <form class="flex flex-col gap-5" @submit.prevent="handleSavePassword">
       <TextInputComponent
         v-model="password"
         v-bind="passwordAttrs"

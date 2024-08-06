@@ -1,10 +1,4 @@
-import {
-  updateProfile,
-  updateEmail,
-  updatePhoneNumber,
-  reauthenticateWithCredential,
-  EmailAuthProvider
-} from 'firebase/auth'
+import { updateProfile, updateEmail, updatePhoneNumber } from 'firebase/auth'
 import { auth } from './firebase'
 import { watch } from 'vue'
 import { usePasswordStore } from '@/stores/password'
@@ -31,15 +25,14 @@ export const useUpdateProfile = (
 export const usePasswordConfirmationNeeded = () => {
   const { showPasswordForm, password } = usePasswordStore()
 
-  return new Promise((resolve, reject) => {
+  return new Promise((resolve) => {
     showPasswordForm()
     watch(
       () => ({
         show: password.show,
         confirmed: password.confirmed
       }),
-      (newPassword, oldPassword) => {
-        console.log(newPassword, oldPassword)
+      (newPassword) => {
         if (!newPassword.show && newPassword.confirmed) {
           resolve(true)
         } else {

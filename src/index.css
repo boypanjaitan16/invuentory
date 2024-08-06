@@ -6,4 +6,8 @@
   body {
     @apply text-sm;
   }
+
+  input:active {
+    @apply outline-primary-10;
+  }
 }

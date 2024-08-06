@@ -24,13 +24,13 @@ const model = defineModel()
       :class="[errors ? 'text-red-600' : 'text-gray-500']"
       >{{ label }}</label
     >
-    <div class="relative">
+    <div class="relative mt-1">
       <select
         v-model="model"
         :name="name"
         :id="name"
-        class="w-full px-3 py-2 bg-white border-2 rounded"
-        :class="{ 'border-red-600': errors }"
+        class="w-full px-3 py-2 bg-white border-[1.5px] rounded"
+        :class="{ 'border-red-600': errors, 'border-gray-300': !errors }"
       >
         <option value="">Please select one</option>
         <option v-for="option in options" :key="option.value" :value="option.value">

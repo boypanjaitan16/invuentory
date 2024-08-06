@@ -4,7 +4,7 @@ import Header from '@/components/HeaderComponent.vue'
 </script>
 <template>
   <Header />
-  <main class="p-5 md:px-10">
+  <main class="flex flex-col flex-grow p-5 md:px-10">
     <RouterView />
   </main>
 </template>

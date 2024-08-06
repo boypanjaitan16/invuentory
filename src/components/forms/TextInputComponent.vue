@@ -19,24 +19,24 @@ const togglePassword = () => {
 }
 </script>
 <template>
-  <div>
+  <div class="w-full">
     <label
       v-if="label"
       :for="name"
-      class="text-sm font-light"
+      class="text-sm"
       :class="[errors ? 'text-red-600' : 'text-gray-500']"
       >{{ label }}
     </label>
 
-    <div class="relative">
+    <div class="relative mt-1">
       <input
         v-model="model"
         :type="typeRef"
         :name="name"
         :id="name"
         :placeholder="placeholder"
-        class="w-full px-3 py-2 border-2 rounded"
-        :class="{ 'border-red-600': errors }"
+        class="w-full px-3 py-2 border-[1.5px] rounded"
+        :class="{ 'border-red-600': errors, 'border-gray-300': !errors }"
       />
       <button
         v-if="type === 'password'"

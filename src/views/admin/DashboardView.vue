@@ -7,17 +7,17 @@ const menuItems = [
   {
     title: 'Dashboard',
     link: '/admin',
-    icon: 'icon-[mdi--view-dashboard]'
+    icon: 'icon-[mdi--view-dashboard-variant-outline]'
   },
   {
     title: 'Users',
     link: '/admin/users',
-    icon: 'icon-[mdi--user]'
+    icon: 'icon-[mdi--users-outline]'
   },
   {
     title: 'Products',
     link: '/admin/products',
-    icon: 'icon-[mdi--list-box]'
+    icon: 'icon-[mdi--list-box-outline]'
   },
   {
     title: 'Categories',
@@ -29,8 +29,8 @@ const menuItems = [
 const { user } = useUserStore()
 </script>
 <template>
-  <div class="flex flex-row space-x-5 divide-x">
-    <div>
+  <div class="flex flex-row flex-grow space-x-5 divide-x">
+    <div class="lg:min-w-[250px]">
       <div
         class="flex items-center p-5 space-x-3 rounded shadow bg-gradient-to-r from-primary-3 to-primary-10"
       >

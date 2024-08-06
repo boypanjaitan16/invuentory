@@ -28,9 +28,9 @@ const handleSetPassword = handleSubmit((values) => {
     .then(() => {
       confirmPassword()
     })
-    .catch(() => {
+    .catch((error) => {
       setErrors({
-        password: 'Password is not correct.'
+        password: authMessageMapper(error.code, error.message)
       })
     })
 })

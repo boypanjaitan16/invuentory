@@ -7,29 +7,29 @@ const menuItems = [
   {
     title: 'Profile',
     link: '/profile',
-    icon: 'icon-[mdi--user]'
+    icon: 'icon-[mdi--user-outline]'
   },
   {
     title: 'Update Profile',
     link: '/profile/update',
-    icon: 'icon-[mdi--user-edit]'
+    icon: 'icon-[mdi--user-check-outline]'
   },
   {
     title: 'Change Password',
     link: '/profile/change-password',
-    icon: 'icon-[mdi--password]'
+    icon: 'icon-[mdi--user-lock-outline]'
   },
   {
     title: 'Approval',
     link: '/profile/approval',
-    icon: 'icon-[mdi--user-access-control]'
+    icon: 'icon-[mdi--controller-circle-outline]'
   }
 ]
 
 const { user } = useUserStore()
 </script>
 <template>
-  <div class="flex flex-row space-x-5 divide-x">
+  <div class="flex flex-row flex-grow space-x-5 divide-x">
     <div>
       <div
         class="flex items-center p-5 space-x-3 rounded shadow bg-gradient-to-r from-primary-10 to-primary-3"

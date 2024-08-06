@@ -86,7 +86,7 @@ const handleSaveChanges = handleSubmit((values) => {
     <AlertComponent v-if="error" type="error" @onDismiss="setError(undefined)" className="mb-5">{{
       error
     }}</AlertComponent>
-    <form class="space-y-3" @submit.prevent="handleSaveChanges">
+    <form class="flex flex-col gap-5" @submit.prevent="handleSaveChanges">
       <TextInputComponent
         v-model="name"
         v-bind="nameAttrs"
